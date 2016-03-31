@@ -21,7 +21,8 @@
 package flashx.funk {
   public function curry(f: Function, x: *, thisArg: * = null): Function {
     return function(... rest): * {
-      return f.apply(thisArg, rest.unshift(x))
+      rest.unshift(x)
+      return f.apply(thisArg, rest)
     }
   }
 }
