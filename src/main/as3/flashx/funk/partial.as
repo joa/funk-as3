@@ -19,7 +19,7 @@
  */
 
 package flashx.funk {
-  public function curry(f: Function, x: *, thisArg: * = null): Function {
+  public function partial(f: Function, x: *, thisArg: * = null): Function {
     return function(... rest): * {
       rest.unshift(x)
       return f.apply(thisArg, rest)
